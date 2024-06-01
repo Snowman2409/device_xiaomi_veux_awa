@@ -12,8 +12,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device.
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit some common crDroid stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Awaken stuff.
+$(call inherit-product, vendor/awaken/config/common_full_phone.mk)
 
 # Inherit some common device props
 TARGET_USES_AOSP_RECOVERY := true
@@ -30,7 +30,7 @@ PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := veux
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := 2201116SG
-PRODUCT_NAME := lineage_veux
+PRODUCT_NAME := awaken_veux
 PRODUCT_SYSTEM_NAME := veux_global
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
@@ -40,3 +40,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
 
 BUILD_FINGERPRINT := Redmi/veux_global/veux:13/TKQ1.221114.001/V816.0.3.0.TKCMIXM:user/release-keys
+
+# Sign builds
+PRODUCT_DEFAULT_DEV_CERTIFICATE := .android-certs/releasekey
